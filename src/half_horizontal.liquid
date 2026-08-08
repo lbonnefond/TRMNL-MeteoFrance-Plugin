@@ -1,0 +1,26 @@
+{% if graph_half_horizontal %}
+  <div class="layout layout--col pt--5">
+    <img
+      class="image image--contain image-dither"
+      src="{{ graph_half_horizontal }}"
+      alt="{{ weather_title }}">
+  </div>
+{% else %}
+  <div class="layout layout--col">
+    <div class="stretch-x stretch-y">
+      <span class="label">
+        {{ message | default: "Unable to retrieve Météo-France data" }}
+      </span>
+    </div>
+  </div>
+{% endif %}
+
+<div class="title_bar">
+  <span class="title">
+    24h Meteo France
+  </span>
+
+  <span class="instance">
+    {{ weather_title }}
+  </span>
+</div>

@@ -1,0 +1,22 @@
+{% if graph_half_vertical %}
+  <div class="layout layout--col">
+    <img
+      class="image image--contain image-dither"
+      src="{{ graph_half_vertical }}"
+      alt="{{ weather_title_compact }}">
+  </div>
+{% else %}
+  <div class="layout layout--col">
+    <div class="stretch-x stretch-y">
+      <span class="label">
+        {{ message | default: "Unable to retrieve Météo-France data" }}
+      </span>
+    </div>
+  </div>
+{% endif %}
+
+<div class="title_bar">
+  <span class="title">
+    {{ weather_title_compact }}
+  </span>
+</div>
