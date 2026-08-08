@@ -1,0 +1,86 @@
+---
+strategy: polling
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: ''
+polling_verb: get
+framework_version: latest
+serverless_language: node
+polling_url: https://meteo.inscog.eu/?trmnl=1&station={{ station | url_encode }}&lat_lon={{ lat_lon | url_encode }}&parameter={{ parameter | url_encode }}&language={{ language | url_encode }}
+polling_headers: X-Meteo-France-API-Key={{ meteo_france_api_key }}
+polling_body: ''
+id: 408744
+oauth_enabled: 'false'
+oauth_pkce_enabled: 'no'
+oauth_authorize_url: ''
+oauth_token_url: ''
+oauth_scopes: ''
+oauth_scope_separator: ''
+oauth_refresh_url: ''
+oauth_auth_params: ''
+oauth_token_headers: ''
+oauth_token_site: ''
+oauth_token_params: ''
+oauth_token_request_auth_method: ''
+oauth_body_format: ''
+oauth_token_response_metadata: ''
+oauth_authorization_method: ''
+oauth_refresh_params: ''
+oauth_token_field_name: ''
+oauth_expiry_field_name: ''
+oauth_expiry_strategy: ''
+oauth_fixed_expiry_ms: ''
+custom_fields:
+- keyname: about
+  field_type: author_bio
+  name: À propos
+  category: environment,nature
+  description: Affiche les observations des stations météorologiques Météo-France sur votre TRMNL.
+  email_address: meteo@inscog.eu
+  github_url: https://github.com/lbonnefond/TRMNL-MeteoFrance
+- keyname: lat_lon
+  field_type: lat_lon
+  name: Ville ou adresse
+  description: Facultatif. Recherchez une ville, une adresse ou un code postal.
+  help_text: Si une station est renseignée, elle est prioritaire.
+  optional: true
+  group: Localisation
+- keyname: station
+  field_type: string
+  name: Identifiant de station Météo-France (optionnel)
+  description: Option avancée. Si vous connaissez l'identifiant d'une station Météo-France (ex. 67124001), saisissez-le ici.
+  help_text: Ce champ est prioritaire sur la ville ou l'adresse.
+  placeholder: 67124001
+  optional: true
+  group: Localisation
+- keyname: parameter
+  field_type: select
+  name: Paramètre
+  default: temperature
+  options:
+  - Température: temperature
+  - Humidité: humidity
+  - Vent: wind_speed
+  - Rafales: wind_gust
+  - Pression: pressure
+  - Précipitations: rain
+  - Visibilité: visibility
+  - Ensoleillement: sunshine
+  group: Affichage
+- keyname: language
+  field_type: select
+  name: Langue
+  default: fr
+  options:
+  - Français: fr
+  - English: en
+  group: Affichage
+- keyname: meteo_france_api_key
+  field_type: password
+  name: Clé API Météo-France
+  description: Clé personnelle pour l'API « Données publiques – Paquet d'observation » de Météo-France. <a href="https://portail-api.meteofrance.fr/web/fr/api/DonneesPubliquesPaquetObservation" class="underline">Obtenir une clé API Météo-France</a>.
+  help_text: La clé est transmise au backend dans un en-tête HTTPS et n'est jamais placée dans l'URL.
+  group: Connexion
+name: 24h Botanique Température
+description: Meteo France - last 24h
+refresh_interval: 15
