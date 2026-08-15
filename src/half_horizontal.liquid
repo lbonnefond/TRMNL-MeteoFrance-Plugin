@@ -3,13 +3,13 @@
     <img
       class="image image--contain image-dither"
       src="{{ graph_half_horizontal }}"
-      alt="{{ weather_title }}">
+      alt="{{ air_quality_title }}">
   </div>
 {% else %}
   <div class="layout layout--col">
     <div class="stretch-x stretch-y">
       <span class="label">
-        {{ message | default: "Unable to retrieve Météo-France data" }}
+        {{ message | default: "Unable to retrieve Atmo Grand Est data" }}
       </span>
     </div>
   </div>
@@ -17,10 +17,10 @@
 
 <div class="title_bar">
   <span class="title">
-    24h Meteo France
+    24h Atmo Grand Est
   </span>
 
   <span class="instance">
-    {{ weather_title }}
+    {{ air_quality_title }}
   </span>
 </div>
