@@ -19,39 +19,39 @@
   <!-- TRMNL X portrait -->
   {% if secondary_available %}
 
-    <!-- Two graphs -->
-    <div class="layout layout--col hidden lg:portrait:flex gap--distribute">
+    <div class="layout hidden lg:portrait:block">
+      <div class="flex flex--col h--full gap--medium">
 
-      <div class="flex flex--col gap--small">
-        <img
-          class="image image--contain image-dither w--[100cqw]"
-          src="{{ image_full_x_portrait_primary }}"
-          alt="{{ weather_title }}">
+        <div class="flex flex--col">
+          <img
+            class="image image--contain image-dither w--full"
+            src="{{ image_full_x_portrait_primary }}"
+            alt="{{ weather_title }}">
 
-        <span class="label">
-          {{ title }}
-        </span>
+          <span class="label text--center">
+            {{ title }}
+          </span>
+        </div>
+
+        <div class="flex flex--col">
+          <img
+            class="image image--contain image-dither w--full"
+            src="{{ image_full_x_portrait_secondary }}"
+            alt="{{ secondary_title }}">
+
+          <span class="label text--center">
+            {{ secondary_title }}
+          </span>
+        </div>
+
       </div>
-
-      <div class="flex flex--col gap--small">
-        <img
-          class="image image--contain image-dither w--[100cqw]"
-          src="{{ image_full_x_portrait_secondary }}"
-          alt="{{ secondary_title }}">
-
-        <span class="label">
-          {{ secondary_title }}
-        </span>
-      </div>
-
     </div>
 
   {% else %}
 
-    <!-- One graph -->
     <div class="layout layout--col hidden lg:portrait:block">
       <img
-        class="image image--contain image-dither portrait:w--[100cqw]"
+        class="image image--contain image-dither w--full"
         src="{{ image_full_x }}"
         alt="{{ weather_title }}">
     </div>
@@ -60,7 +60,6 @@
 
 {% else %}
 
-  <!-- Error -->
   <div class="layout layout--col">
     <div class="stretch-x stretch-y">
       <span class="label">
