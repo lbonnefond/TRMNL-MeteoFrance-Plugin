@@ -6,7 +6,7 @@ static_data: ''
 polling_verb: get
 framework_version: latest
 serverless_language: node
-polling_url: https://meteo.inscog.eu/?trmnl=1&station={{ station | url_encode }}&lat_lon={{ lat_lon | url_encode }}&parameter={{ parameter | url_encode }}&language={{ language | url_encode }}
+polling_url: 'https://meteo.inscog.eu/?trmnl=1&station={{ station | url_encode }}&lat_lon={{ lat_lon | url_encode }}&parameter={{ parameter | url_encode }}&secondary_parameter={{ secondary_parameter | default: ''none'' | url_encode }}&language={{ language | url_encode }}'
 polling_headers: X-Meteo-France-API-Key={{ meteo_france_api_key }}
 polling_body: ''
 id: 408744
