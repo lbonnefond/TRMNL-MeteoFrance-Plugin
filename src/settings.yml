@@ -67,6 +67,23 @@ custom_fields:
   - Visibilité: visibility
   - Ensoleillement: sunshine
   group: Affichage
+- keyname: secondary_parameter
+  field_type: select
+  name: Second paramètre (TRMNL X portrait)
+  description: Optional second parameter displayed on TRMNL X in portrait mode.
+  description-fr: Deuxième paramètre optionnel affiché sur TRMNL X en mode portrait.
+  default: none
+  options:
+  - Aucun: none
+  - Température: temperature
+  - Humidité: humidity
+  - Vent: wind_speed
+  - Rafales: wind_gust
+  - Pression: pressure
+  - Précipitations: rain
+  - Visibilité: visibility
+  - Ensoleillement: sunshine
+  group: Affichage
 - keyname: language
   field_type: select
   name: Langue
