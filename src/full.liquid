@@ -60,6 +60,7 @@
 
 {% else %}
 
+  <!-- Error -->
   <div class="layout layout--col">
     <div class="stretch-x stretch-y">
       <span class="label">
@@ -70,12 +71,26 @@
 
 {% endif %}
 
-<div class="title_bar">
-  <span class="title">
-    24h Meteo France
-  </span>
+<!-- Global title bar:
+     hidden only on TRMNL X portrait when two graphs are displayed -->
+{% unless secondary_available %}
+  <div class="title_bar">
+    <span class="title">
+      24h Meteo France
+    </span>
 
-  <span class="instance">
-    {{ weather_title }}
-  </span>
-</div>
+    <span class="instance">
+      {{ weather_title }}
+    </span>
+  </div>
+{% else %}
+  <div class="title_bar lg:portrait:hidden">
+    <span class="title">
+      24h Meteo France
+    </span>
+
+    <span class="instance">
+      {{ weather_title }}
+    </span>
+  </div>
+{% endunless %}
