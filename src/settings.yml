@@ -35,7 +35,8 @@ custom_fields:
   field_type: author_bio
   name: À propos
   category: environment,nature
-  description: Affiche les observations des stations météorologiques Météo-France sur votre TRMNL.
+  description: Displays Météo-France weather station observations on your TRMNL.
+  description-fr: Affiche les observations des stations météorologiques Météo-France sur votre TRMNL.
   email_address: meteo@inscog.eu
   github_url: https://github.com/lbonnefond/TRMNL-MeteoFrance
 - keyname: lat_lon
