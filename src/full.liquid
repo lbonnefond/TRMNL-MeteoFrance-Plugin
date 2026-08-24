@@ -1,63 +1,35 @@
 {% if graph_full %}
-
-  <!-- OG -->
+  <!--   OG   -->
   <div class="layout layout--col lg:hidden">
-    <img
-      class="image image--contain image-dither"
-      src="{{ graph_full }}"
-      alt="{{ weather_title }}">
+    <img class="image image--contain image-dither" src="{{ graph_full }}" alt="{{ weather_title }}">
   </div>
-
-  <!-- TRMNL X landscape -->
+  <!--   TRMNL X landscape   -->
   <div class="layout layout--col hidden lg:block portrait:hidden">
-    <img
-      class="image image--contain image-dither"
-      src="{{ image_full_x }}"
-      alt="{{ weather_title }}">
+    <img class="image image--contain image-dither" src="{{ image_full_x }}" alt="{{ weather_title }}">
   </div>
-
-  <!-- TRMNL X portrait with secondary graph -->
+  <!--   TRMNL X portrait with secondary graph   -->
   {% if secondary_available %}
-    <div class="layout layout--col hidden lg:portrait:block">
-
-      <div class="stretch-x">
-        <img
-          class="image image--contain image-dither w--[100cqw]"
-          src="{{ image_full_x_portrait_primary }}"
-          alt="{{ weather_title }}">
+    <div class="layout layout--col hidden lg:portrait:block gap--distribute">
+      <div class="flex flex--col gap--small">
+        <img class="image image--contain image-dither w--[100cqw]" src="{{ image_full_x_portrait_primary }}" alt="{{ weather_title }}">
+        <span class="label">
+          {{ title }}
+        </span>
       </div>
-
-      <div class="label">
-        {{ title }}
+      <div class="flex flex--col gap--small">
+        <img class="image image--contain image-dither w--[100cqw]" src="{{ image_full_x_portrait_secondary }}" alt="{{ secondary_title }}">
+        <span class="label">
+          {{ secondary_title }}
+        </span>
       </div>
-
-      <div class="stretch-x">
-        <img
-          class="image image--contain image-dither w--[100cqw]"
-          src="{{ image_full_x_portrait_secondary }}"
-          alt="{{ secondary_title }}">
-      </div>
-
-      <div class="label">
-        {{ secondary_title }}
-      </div>
-
     </div>
-
-  {% else %}
-
-    <!-- TRMNL X portrait without secondary graph -->
+    {% else %}
+    <!--   TRMNL X portrait without secondary graph   -->
     <div class="layout layout--col hidden lg:portrait:block">
-      <img
-        class="image image--contain image-dither portrait:w--[100cqw]"
-        src="{{ image_full_x }}"
-        alt="{{ weather_title }}">
+      <img class="image image--contain image-dither portrait:w--[100cqw]" src="{{ image_full_x }}" alt="{{ weather_title }}">
     </div>
-
   {% endif %}
-
-{% else %}
-
+  {% else %}
   <div class="layout layout--col">
     <div class="stretch-x stretch-y">
       <span class="label">
@@ -65,14 +37,11 @@
       </span>
     </div>
   </div>
-
 {% endif %}
-
 <div class="title_bar">
   <span class="title">
     24h Meteo France
   </span>
-
   <span class="instance">
     {{ weather_title }}
   </span>
