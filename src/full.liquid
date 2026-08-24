@@ -1,8 +1,15 @@
 {% if graph_full %}
-  <div class="layout layout--col">
+  <div class="layout layout--col lg:hidden">
     <img
       class="image image--contain image-dither"
       src="{{ graph_full }}"
+      alt="{{ weather_title }}">
+  </div>
+
+  <div class="layout layout--col hidden lg:block">
+    <img
+      class="image image--contain image-dither"
+      src="{{ image_full_x }}"
       alt="{{ weather_title }}">
   </div>
 {% else %}
