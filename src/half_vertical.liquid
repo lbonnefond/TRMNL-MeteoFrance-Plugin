@@ -1,9 +1,18 @@
-{% if graph_half_vertical %}
-  <div class="layout layout--col">
+{% if image_half_vertical %}
+  <div class="layout layout--col pt--5">
+
+    <!-- TRMNL X -->
     <img
-      class="image image--contain image-dither"
-      src="{{ graph_half_vertical }}"
-      alt="{{ weather_title_compact }}">
+      class="image image--contain image-dither hidden lg:visible"
+      src="{{ image_half_vertical_x }}"
+      alt="{{ weather_title }}">
+
+    <!-- TRMNL OG -->
+    <img
+      class="image image--contain image-dither lg:hidden"
+      src="{{ image_half_vertical }}"
+      alt="{{ weather_title }}">
+
   </div>
 {% else %}
   <div class="layout layout--col">
