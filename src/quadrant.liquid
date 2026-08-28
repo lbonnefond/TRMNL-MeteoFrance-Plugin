@@ -3,10 +3,15 @@
 
     <!-- TRMNL X -->
     <img
-      class="image image--contain image-dither hidden lg:visible"
+      class="image image--contain image-dither hidden lg:visible lg:portrait:hidden"
       src="{{ image_quadrant_x }}"
       alt="{{ weather_title_compact }}">
 
+    <img
+      class="image image--contain image-dither hidden lg:portrait:visible"
+      src="{{ image_quadrant }}"
+      alt="{{ weather_title }}">
+    
     <!-- TRMNL OG -->
     <img
       class="image image--contain image-dither lg:hidden"
